@@ -19,3 +19,7 @@ echo "FROM $ilist" > ./bootkube$bootkubeversion/$dockerfile/Dockerfile
 done
 mkdir -p ./bootkube$bootkubeversion/pause-amd64-3.1
 echo "FROM k8s.gcr.io/pause-amd64:3.1" > ./bootkube$bootkubeversion/pause-amd64-3.1/Dockerfile
+mkdir -p ./bootkube$bootkubeversion/ > ./bootkube$bootkubeversion/tiller/Dockerfile
+
+echo "FROM gcr.io/kubernetes-helm/tiller:v2.9.1" > ./bootkube$bootkubeversion/tiller/Dockerfile
+
