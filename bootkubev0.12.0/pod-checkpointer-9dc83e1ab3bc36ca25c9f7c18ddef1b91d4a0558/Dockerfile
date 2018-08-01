@@ -1,1 +1,0 @@
-FROM quay.io/coreos/pod-checkpointer:9dc83e1ab3bc36ca25c9f7c18ddef1b91d4a0558
