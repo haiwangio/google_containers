@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bootstrap-token-gp3iqy
+  namespace: kube-system
+type: bootstrap.kubernetes.io/token
+stringData:
+  token-id: "gp3iqy"
+  token-secret: "j2n8ga9j4ukdpas6"
+  usage-bootstrap-authentication: "true"

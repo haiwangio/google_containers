@@ -4,15 +4,13 @@ bootkubeversion="v0.14.0"
 tillerversion="v2.12.2"
 kuberneterversion="v1.10.1"
 pauseversion="3.1"
-rm -rf `pwd`/asset/*
-docker run -it -v `pwd`/asset:/asset quay.io/coreos/bootkube:${bootkubeversion} /bootkube  render   --asset-dir=/asset/flannel
-docker run -it -v `pwd`/asset:/asset quay.io/coreos/bootkube:${bootkubeversion} /bootkube  render   --asset-dir=/asset/canal --network-provider experimental-canal
-mkdir -p `pwd`/asset/all
-cp -rf `pwd`/asset/flannel/* `pwd`/asset/all/
-cp -rf `pwd`/asset/canal/* `pwd`/asset/all/
-listimage=$(grep -rh image: `pwd`/asset/all  | sort | uniq | awk '{print $2}')
-rm -rf ./bootkube$bootkubeversion
-mkdir -p ./bootkube$bootkubeversion
+rm -rf `pwd`/bootkube$bootkubersion/asset/*
+docker run -it -v `pwd`/bootkube$bootkubeversion/asset:/asset quay.io/coreos/bootkube:${bootkubeversion} /bootkube  render   --asset-dir=/asset/flannel
+docker run -it -v `pwd`/bootkube$bootkubeversion/asset:/asset quay.io/coreos/bootkube:${bootkubeversion} /bootkube  render   --asset-dir=/asset/canal --network-provider experimental-canal
+mkdir -p `pwd`/bootkube$bootkubeversion/asset/all
+cp -rf `pwd`/bootkube$bootkubeversion/asset/flannel/* `pwd`/bootkube$bootkubeversion/asset/all/
+cp -rf `pwd`/bootkube$bootkubeversion/asset/canal/* `pwd`/bootkube$bootkubeversion/asset/all/
+listimage=$(grep -rh image: `pwd`/bootkube$bootkubeversion/asset/all  | sort | uniq | awk '{print $2}')
 for ilist in $listimage
 do 
 dockerv=$(echo $ilist | sed -s "s/:/-/g")

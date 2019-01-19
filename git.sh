@@ -1,5 +1,5 @@
 #!/bin/bash
-rm -rf ./asset
+#rm -rf ./asset
 git add .
 git commit -m $1
 git push
