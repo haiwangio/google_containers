@@ -1,6 +1,6 @@
 #!/bin/bash
-oldbootkubeversion="v0.12.0"
-bootkubeversion="v0.12.0"
+oldbootkubeversion="v0.14.0"
+bootkubeversion="v0.14.0"
 rm -rf `pwd`/asset/*
 docker run -it -v `pwd`/asset:/asset quay.io/coreos/bootkube:${bootkubeversion} /bootkube  render   --asset-dir=/asset/flannel --cloud-provider=tempcloudprovider
 docker run -it -v `pwd`/asset:/asset quay.io/coreos/bootkube:${bootkubeversion} /bootkube  render   --asset-dir=/asset/canal --network-provider experimental-canal --cloud-provider=tempcloudprovider
